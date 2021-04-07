@@ -1,7 +1,7 @@
 title: "splash"
 author: "xyzzy@RockingShip.org"
 url: https://rockingship.github.io # root address of the site
-description: "Perceptual driven video codec"
+description: "Perceptual driven codec to capture notion of motion"
 favicon: assets/favicon-32.png
 favicon152: assets/favicon-152.png
 favicon160: assets/favicon-160.png

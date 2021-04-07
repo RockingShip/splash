@@ -10,14 +10,12 @@ image: assets/favimage-840x472.jpg
 
 # `splash`
 
-Perceptual driven video codec
+Perceptual driven codec to capture notion of motion.
 
 Instead of an ad with tracking...  
 Like to [donate ![opencollective](assets/opencollective-icon.svg)](https://opencollective.com/RockingShip) some appreciation for the use or inspiration this gives you?
 
-### Welcome to the Wonderful World of rendering on demand
-
-*when insufficient resources force you to prioritize which pixels to render first*
+### Welcome to the Wonderful World of incremental image scanning
 
 `splash` uses the [`zoomer`](https://rockingship.github.io/jsFractalZoom/README.html) scan-order as basis for encoding.  
 The most important pixels go first which aims at what our brain and eyes do best:  detecting colour and contrast change (movement).  
