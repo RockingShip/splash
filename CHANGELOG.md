@@ -8,5 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Unreleased
 
 ```
+2021-04-07 18:39:12 Extracted from `jsFractalZoom`.
 2021-04-07 18:04:45 Initial commit.
 ```
