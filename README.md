@@ -1,21 +1,26 @@
 ---
 layout: home
-title: "splash - Perceptual driven video codec"
+title: "splash - Fractal zooming with a paint brush as video encoding"
 image: assets/favimage-840x472.jpg
 ---
 
 \[click on the image to watch the HD version with lower framerate\]  
 [![ade-border-840x472.webp](https://rockingship.github.io/splash-media/ade/ade-border-840x472.webp)](https://rockingship.github.io/splash-media/ade/ade-border-1920x1080.mp4)  
-\[illustrates the incremental change between two frames\]
+\[illustrates the incremental change between two frames, lower left number is progress\]
 
 # `splash`
 
-Perceptual driven codec to capture notion of motion.
+Fractal zooming with a paint brush as video encoding
 
-Instead of an ad with tracking...  
-Like to [donate ![opencollective](assets/opencollective-icon.svg)](https://opencollective.com/RockingShip) some appreciation for the use or inspiration this gives you?
+### Welcome to the Wonderful World of dynamic FPS
 
-### Welcome to the Wonderful World of incremental image scanning
+*satisfying what the brain desires most*
+
+Splash is novel method to serialize pixels of an image/video.
+It combines row/column scanning weights from the fractal zoomer with an adaptive paintbrush for colouring pixels with transparency.
+In traditional terms, fast changing areas have a localised high FPS, lesser changing areas have a localised low FPS.
+This could greatly benefit the communication between video card and monitor, relaxing bandwidth limitations.
+Splash can also be used as a filter to isolate essence of movement, demonstrated by extreme high PixelsPerFrame ratios with [ADE/GTA](https://rockingship.github.io/splash-media/README.html) demos.
 
 `splash` uses the [`zoomer`](https://rockingship.github.io/jsFractalZoom/README.html) scan-order as basis for encoding.  
 The most important pixels go first which aims at what our brain and eyes do best:  detecting colour and contrast change (movement).  
@@ -25,12 +30,11 @@ Our eyes will target that region, and our macula will register that as sharpest.
 Areas seen outside the macula are monochrome and blurry.  
 The `zoomer`/`splash` engine tries to prioritize the pixels our mind and macula desires the most.
 
-A full/complete frame consists of a sequence pixel values in order of reducing significance.  
+A full/complete frame consists of a scan row+column ruler followed by a sequence of pixel values in order of reducing significance.  
 Rulers determine scan-line scoring and pixel ordering.  
-A lossy compression can be achieved by truncating the sequence.  
+A lossy "compression" can be achieved by truncating the sequence.  
 Point of interest is how much can you truncate while keeping the essence of the imagery.  
-Focus is therefore on low-bandwidth.  
-The examples mentioned below explore the extremes.
+Focus is therefore on low-bandwidth glitches and artifacts, the examples mentioned below explore the extremes.
 
 `splash` only reorders the scanning sequence of pixels.  
 Colour reduction and pixel compression are not part of this project.
@@ -38,16 +42,9 @@ Colour reduction and pixel compression are not part of this project.
 The animated image above displays how a single `splash` frame is constructed.  
 The border marks processed scan-lines (rows+columns), the number in the lower-left is progress.
 
-`splash` can be a revolutionary new way of frame rendering and gaming:  
-Why render 4K worth of pixels with reduced FPS if it's too much for your brain to handle.  
-Better would be to render the pixels that matter at a higher FPS and let the lesser pixels catch up later.  
-For AI it could be used to reduce visual stimuli while retaining the essence of movement.
-
-Upgrading the data model to process video frames needs some enhancements:
-
 ## Table of contents
 
-  - [Welcome to the Wonderful World of rendering on demand](#welcome-to-the-wonderful-world-of-rendering-on-demand)
+  - [Welcome to the Wonderful World of dynamic FPS](#welcome-to-the-wonderful-world-of-dynamic-fps)
   - [Frame buffer](#frame-buffer)
   - [Ruler metrics and scoring](#ruler-metrics-and-scoring)
   - [Interpolation](#interpolation)
