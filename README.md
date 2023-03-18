@@ -180,7 +180,7 @@ Configurable GTA selector: [https://rockingship.github.io/splash-media/gta/selec
 ## FFmpeg
 
 An implementation of the `splash` codec has been made available for `FFmpeg`.  
-The patch file is named [0001-Splash-codec.patch](0001-Splash-codec.patch).
+The patch file is named [20230313-splash_codec.patch](20230313-splash_codec.patch).
 
 The encoder is activated with `-c:v splash`, and supports the following options:
 
@@ -195,7 +195,7 @@ The encoder is activated with `-c:v splash`, and supports the following options:
 
 ## Manifest
 
- - [0001-Splash-codec.patch](0001-Splash-codec.patch)  
+ - [20230313-splash_codec.patch](20230313-splash_codec.patch)  
    Patch file for FFmpeg containing the spash encoder/decoder.
 
  - [codec.js](codec.js)  
